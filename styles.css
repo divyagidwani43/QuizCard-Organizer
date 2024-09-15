@@ -1,0 +1,313 @@
+/* General Styles */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #c5bbcb;
+    display: flex;
+    justify-content: center;
+    height: 100vh;
+}
+
+.container {
+    padding: 30px;
+     text-align: center;
+    width: 10000px;
+}
+
+h1 {
+    text-align: left;
+    margin-bottom: 30px;
+    font-variant: small-caps;
+    font-size: 50px;
+    color: #333;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: flex-start;
+    position: relative;
+}
+
+li, .add-topic-container {
+    background-color: #a988bc;
+    padding: 20px;
+    border-radius: 8px;
+    color: #fff;
+    font-size: 24px;
+    transition: transform 0.2s, box-shadow 0.2s, opacity 0.3s;
+    cursor: pointer;
+    width: calc(20% - 20px);
+    min-width: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 150px;
+    position: relative;
+    opacity: 0.8; /* Default opacity */
+}
+
+li:hover, .add-topic-container:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 123, 255, 0.3);
+    opacity: 1; /* Full opacity for hovered topic */
+}
+
+.topic-buttons {
+    display: none;
+    position: absolute;
+    background-color: #a988bc;
+    padding: 10%;
+    border-radius: 10px;
+    width: 150%;
+    left: -24%;
+    right: 0;
+    bottom: -60px; /* Adjust to move buttons below the box */
+    justify-content: space-around; /* Position buttons side by side */
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+li:hover .topic-buttons  {
+    display: flex;
+    opacity: 1;
+}
+
+
+/* Button Styles */
+.btn-secondary {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 600;
+    color: white;
+    background-color: #ceb9dbf5;
+    padding: 8px 12px;
+    border: 0;
+    border-radius: 20px;
+    font-size: 14px;
+    width: 45%; 
+    /* Adjust width to fit side by side */
+    transition: background-color 0.3s;
+    text-align: center;
+}
+
+.topic-buttons .btn-secondary:hover {
+    background-color: #efeff1;
+    color: black;
+}
+
+
+/* Button Styles */
+.btn-primary {
+    background-color: #a988bc;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s, box-shadow 0.2s;
+}
+
+#add-topic-btn {
+    padding: 48px 64px;
+    border: 4px solid rgb(0, 0, 0);
+    background-color: rgb(255, 255, 255);
+    /* background-color: #333; */
+    font-size: 40px;
+    color: black;
+    font-weight: 900;
+}
+#add-topic-btn:hover{
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    
+}
+.btn-primary:hover {
+    background-color: #a988bc;
+}
+
+/* Modal Styles */
+.modal {
+    display: none; 
+    position: fixed;
+    z-index: 10; 
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+    width: 90%;
+    max-width: 400px;
+    text-align: center;
+    position: relative;
+}
+
+.close-btn {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    color: #aaa;
+    font-size: 28px;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.close-btn:hover {
+    color: #333;
+}
+
+
+/* Input Field Styles */
+.input-field {
+    width: 100%;
+    padding: 12px;
+    margin: 20px 0;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 16px;
+    transition: border-color 0.3s;
+}
+
+.input-field:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+
+/* Flashcard Styles */
+.flashcard {
+    width: 200px; /* Set a fixed width for each flashcard */
+    /* ... existing styles ... */
+    margin: 20px;
+    height: 120px;
+    background-color: #a988bc;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s, box-shadow 0.3s;
+    cursor: pointer;
+    font-size: 18px;
+    text-align: center;
+    position: relative;
+}
+
+.flashcard:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+}
+
+
+.flashcard-container {
+    display: flex;
+    flex-wrap: wrap; /* Allows cards to wrap to the next line if needed */
+    gap: 20px; /* Space between flashcards */
+    justify-content: right; /* Centers the flashcards horizontally */
+    margin-top: 20px;
+}
+
+
+/* Delete Button Styles */
+.delete-flashcard-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: transparent;
+    border: none;
+    color: white;
+    font-size: 18px;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.delete-flashcard-btn:hover {
+    color: #ff0000; /* Red color on hover */
+}
+
+
+/* Optional: Add specific styles for the back-to-dashboard button */
+#back-to-dashboard {
+    margin-top: 20px;
+    padding: 12px 20px;
+    background-color: #007bff; /* Adjust color as needed */
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#back-to-dashboard:hover {
+    background-color: #0056b3; /* Adjust hover color as needed */
+}
+
+
+/* Container for buttons */
+.button-container {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* Space between buttons */
+}
+
+
+/* Button styles, if not already defined */
+.btn-primary-review {
+    margin-top: 20px; 
+    background-color: #007bff;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.btn-primary-review:hover {
+    background-color: #0056b3;
+}
+
+
+/* Delete Button Styles */
+.delete-btn {
+    position: absolute;
+    top: 4px;
+    right: 10px;
+    font-size: 17px;
+    color: #fbf6f6;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.delete-btn:hover {
+    color: #ff1a1a;
+}
+
+
+/* Make sure list items are positioned relative for the delete button to be positioned correctly */
+li {
+    position: relative;
+}

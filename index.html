@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flashcard App</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <div class="container">
+        <h1>QuizCard Organizer</h1>
+        <h1 style="font-size: 35px;">Dashboard</h1>
+        <ul id="topic-list">
+                <button id="add-topic-btn" >+</button>
+            <!-- Example Topic (remove this and add dynamically in script.js) -->
+           
+        </ul>
+    </div>
+
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h2>Add New Topic</h2>
+            <input type="text" id="topic-name" class="input-field" placeholder="Enter topic name">
+            <button id="add-topic-confirm-btn" class="btn-primary">OK</button>
+        </div>
+    </div>
+
+    <!-- Add Flashcard Modal -->
+    <div id="flashcard-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" id="close-flashcard-modal">&times;</span>
+            <h2>Add New Flashcard</h2>
+            <input type="text" id="flashcard-question" class="input-field" placeholder="Enter question">
+            <input type="text" id="flashcard-answer" class="input-field" placeholder="Enter answer">
+            <button id="add-flashcard-confirm-btn" class="btn-primary">Add Flashcard</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
